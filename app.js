@@ -6,18 +6,24 @@ var playerTurn = document.querySelector('.player-turn');
 
 var turnCounter = 1;
 
+
+var winCheck = ["", "", "", "", "", "", "", "", ""]
+
 function handlePlayerMove(event) {
-    
+    var clickedSquare = event.target.dataset.num
+
     if (event.target.textContent) {
         alert('That square has already been filled');
     } else {
         if (turnCounter%2 == 0){
         event.target.textContent = 'O'
         playerTurn.textContent = 'Player Ones Turn'
+        winCheck[clickedSquare] = "O"
         return turnCounter++
         } else {
             event.target.textContent = 'X'
             playerTurn.textContent = 'Player Twos Turn'
+            winCheck[clickedSquare] = "X"
             return turnCounter++
         }
     }
@@ -37,23 +43,8 @@ function test() {
 
 // Test to iterate through array and find win conditions
 function testWinDraw() {
-    for (i=0;i<playSquareArray.length;i++) {
-        if (playSquareArray[0]===playSquareArray[1] && playSquareArray[0]===playSquareArray[2]) {
-            console.log(`${playSquareArray[0]}Wins!`);
-        } else if (playSquareArray[3]===playSquareArray[4] && playSquareArray[3]===playSquareArray[5]) {
-            console.log(`${playSquareArray[3]}Wins!`);
-        } else if (playSquareArray[6]===playSquareArray[7] && playSquareArray[6]===playSquareArray[8]) {
-            console.log(`${playSquareArray[6]}Wins!`);
-        } else if (playSquareArray[0]===playSquareArray[3] && playSquareArray[0]===playSquareArray[6]) {
-            console.log(`${playSquareArray[0]}Wins!`);
-        } else if (playSquareArray[1]===playSquareArray[4] && playSquareArray[1]===playSquareArray[7]) {
-            console.log(`${playSquareArray[1]}Wins!`);
-        } else if (playSquareArray[2]===playSquareArray[5] && playSquareArray[2]===playSquareArray[8]) {
-            console.log(`${playSquareArray[2]}Wins!`);
-        } else if (playSquareArray[0]===playSquareArray[4] && playSquareArray[0]===playSquareArray[8]) {
-            console.log(`${playSquareArray[0]}Wins!`);
-        } else if (playSquareArray[2]===playSquareArray[4] && playSquareArray[2]===playSquareArray[6]) {
-            console.log(`${playSquareArray[2]}Wins!`);
+    for (i=0;i<winCheck.length;i++) {
+        if (winCheck)
         } else {
             console.log('Draw');
         }
