@@ -6,7 +6,6 @@ var playerTurn = document.querySelector('.player-turn');
 
 var turnCounter = 1;
 
-
 var winCheck = ["", "", "", "", "", "", "", "", ""]
 
 function handlePlayerMove(event) {

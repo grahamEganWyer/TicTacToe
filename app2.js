@@ -7,6 +7,7 @@ var currentPlayer = "Player One"
 var win = false;
 
 var winCheck = ["", "", "", "", "", "", "", "", ""]
+var draw = !winCheck.includes("");
 
 var winConditions = [
     [0,1,2],
@@ -53,7 +54,13 @@ function checkForWin() {
 
         if (winCheck[boardState[0]]===winCheck[boardState[1]] && winCheck[boardState[0]]===winCheck[boardState[2]]) {
             alert(`${currentPlayer} WINS`);
+            return
         }
+
+        if(draw) {
+            alert(`ITS A DRAW`);
+        }
+      
     }
 }
 
