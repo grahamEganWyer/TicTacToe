@@ -14,11 +14,17 @@ div {
     border: 1px solid black;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .play-board{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
+    max-width: 625px;
 }
 
 .play-square {
@@ -27,4 +33,9 @@ div {
     align-items: center;
     height: 200px;
     width: 200px;
+}
+
+.play-square:hover {
+    background-color: grey;
+    cursor: pointer;
 }
