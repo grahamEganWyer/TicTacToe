@@ -1,6 +1,7 @@
 body {
     text-align: center;
-    background-image: url("https://i.imgur.com/xRNaVCL.png");
+    /* background-image: url("https://i.imgur.com/xRNaVCL.png"); */
+    background-color: aliceblue;
 }
 
 h1 {
